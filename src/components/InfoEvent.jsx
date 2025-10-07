@@ -14,13 +14,11 @@ const InfoEvent = () => {
       ref={ref}
       sx={{
         width: "100%",
-        minHeight: "50vh",
+        py: { xs: 6, md: 8 },
         display: "flex",
         alignItems: "flex-start", // 👈 el contenido empieza un poco más arriba
         justifyContent: "center",
         backgroundColor: "#ffffff",
-        px: 2,
-        py: { xs: 8, md: 10 }, // más espacio superior e inferior
         textAlign: "center",
       }}
     >

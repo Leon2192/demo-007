@@ -5,9 +5,7 @@ const Confirm = () => {
   return (
     <Box
       sx={{
-        minHeight: "40vh",
-        py: 8,
-        px: 2,
+        minHeight: "50vh",
         backgroundColor: "#ffffff",
         display: "flex",
         flexDirection: "column",

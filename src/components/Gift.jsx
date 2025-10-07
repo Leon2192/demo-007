@@ -27,15 +27,13 @@ const Gift = () => {
         ref={ref}
         sx={{
           width: "100%",
-          minHeight: "60vh",
+          minHeight: "50vh",
           backgroundColor: "#ffffff",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
-          px: 2,
-          py: 8,
         }}
       >
         <Fade in={inView} timeout={1000}>
