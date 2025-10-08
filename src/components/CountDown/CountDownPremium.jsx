@@ -49,7 +49,7 @@ const Countdown = () => {
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        px: 2,
+
         position: "relative",
 
         overflow: "hidden", // previene saltos en scroll

@@ -48,7 +48,7 @@ const InfoEvent = () => {
             variant="h4"
             sx={{
               fontFamily: "'Eyesome'",
-              fontSize: { xs: "2rem", md: "2.8rem" },
+              fontSize: { xs: "2.2rem", md: "2.8rem" },
               color: "#000000",
               fontWeight: 600,
               lineHeight: 1.2,
