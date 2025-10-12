@@ -40,7 +40,7 @@ const Countdown = () => {
       sx={{
         height: "85vh",
         width: "100%",
-        backgroundImage: "url('/images/countdown.png')",
+        backgroundImage: "url('/images/modificaciones/historiablanco.webp')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -49,14 +49,20 @@ const Countdown = () => {
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-
         position: "relative",
-
-        overflow: "hidden", // previene saltos en scroll
+        overflow: "hidden",
       }}
     >
       <Fade in={inView} timeout={1000}>
-        <Grid container spacing={4} justifyContent="center">
+        <Grid
+          container
+          spacing={4}
+          justifyContent="center"
+          sx={{
+            transform: { xs: "translateY(180px)", md: "translateY(40px)" }, // 👈 baja solo el texto
+            transition: "transform 0.3s ease-in-out",
+          }}
+        >
           {unidades.map(([unit, value]) => (
             <Grid item key={unit}>
               <Box textAlign="center">
@@ -64,7 +70,7 @@ const Countdown = () => {
                   sx={{
                     fontSize: { xs: "2.4rem", md: "4rem" },
                     fontWeight: "bold",
-                    color: "#ffffff",
+                    color: "#000000",
                     fontFamily: "'Quicksand'",
                     textShadow: "0 2px 6px rgba(0,0,0,0.5)",
                   }}
@@ -77,6 +83,7 @@ const Countdown = () => {
                     fontSize: { xs: "1rem", md: "1.3rem" },
                     fontFamily: "'Quicksand'",
                     color: "#ffffff",
+                    fontWeight: "bold",
                     textShadow: "0 2px 4px rgba(0,0,0,0.4)",
                   }}
                 >

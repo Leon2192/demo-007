@@ -7,34 +7,17 @@ import {
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import MusicNoteIcon from "@mui/icons-material/MusicNote";
 import PauseIcon from "@mui/icons-material/Pause";
-import { useRef, useState } from "react";
 import { useInView } from "react-intersection-observer";
 
 const Hero = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const desktopImage = "/images/portada.webp";
-  const mobileImage = "/images/portada.webp";
+  const desktopImage = "/images/modificaciones/historia.webp";
+  const mobileImage = "/images/modificaciones/historia.webp";
 
-  const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
 
-  const toggleAudio = () => {
-    const audio = audioRef.current;
-    if (!audio) return;
-
-    if (isPlaying) {
-      audio.pause();
-      setIsPlaying(false);
-    } else {
-      audio.muted = false;
-      audio
-        .play()
-        .catch((err) => console.error("Error al reproducir audio:", err));
-      setIsPlaying(true);
-    }
-  };
+ 
 
   const { ref } = useInView({
     triggerOnce: true,
@@ -72,43 +55,7 @@ const Hero = () => {
       />
 
       {/* Botón de música */}
-      <IconButton
-        onClick={toggleAudio}
-        sx={{
-          position: "absolute",
-          top: 20,
-          right: 20,
-          zIndex: 3,
-          backgroundColor: "rgba(255,255,255,0.7)",
-          color: "#000",
-          width: 50,
-          height: 50,
-          borderRadius: "50%",
-          boxShadow: 2,
-          animation: "bounceMusic 1.5s infinite",
-          "@keyframes bounceMusic": {
-            "0%, 20%, 50%, 80%, 100%": {
-              transform: "translateY(0)",
-            },
-            "40%": {
-              transform: "translateY(-6px)",
-            },
-            "60%": {
-              transform: "translateY(-3px)",
-            },
-          },
-          "&:hover": {
-            backgroundColor: "rgba(255,255,255,0.9)",
-          },
-        }}
-      >
-        {isPlaying ? <PauseIcon /> : <MusicNoteIcon />}
-      </IconButton>
-
-      {/* Audio */}
-      <audio ref={audioRef} src="/images/Sparks.mp3" preload="auto" loop />
-
-      {/* Flecha animada */}
+     
       <Box
         sx={{
           position: "absolute",

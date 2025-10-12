@@ -10,10 +10,9 @@ import Confirm from "./components/Confirm";
 import Dresscode from "./components/Dresscode";
 import SuggestSong from "./components/SugerirCancion";
 import Qr from "./components/QR";
-import Thanks from "./components/Thanks";
 import Frase from "./components/Frase";
-import Padres from "./components/Padres";
 import Gallery from "./components/Gallery/GalleryPremium";
+import Song from "./components/Song";
 
 
 function Loader() {
@@ -64,16 +63,16 @@ function App() {
   return (
     <>
       <Hero />
+      <Song/>
       <Frase/>
       <Countdown />
-      <Padres/>
       <InfoEvent />
       <Confirm />
       <Gallery/>
       <Gift />
       <Qr />
-      <Thanks/>
-   
+      <Dresscode/>
+   {/* <SuggestSong/> */}
     </>
   );
 }
