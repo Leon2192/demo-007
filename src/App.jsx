@@ -67,12 +67,12 @@ function App() {
       <Frase/>
       <Countdown />
       <InfoEvent />
+      <Dresscode/>
       <Confirm />
       <Gallery/>
       <Gift />
       <Qr />
-      <Dresscode/>
-   {/* <SuggestSong/> */}
+      <SuggestSong/>
     </>
   );
 }

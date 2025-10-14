@@ -23,12 +23,17 @@ const Song = () => {
     }
   };
 
+  const backgroundImage = "/images/modificaciones/cancion.png"; 
+
   return (
     <Box
       sx={{
         height: { xs: "40vh", md: "50vh" }, // 🔹 Mucho más bajo que Hero
         width: "100%",
-        backgroundColor: "#ffffff",
+       backgroundImage: `url(${backgroundImage})`,
+       backgroundSize: "cover",
+       backgroundPosition: "center",
+       backgroundRepeat: "no-repeat",
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
