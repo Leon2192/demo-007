@@ -1,4 +1,4 @@
-import { Box, Typography, Slide, Button } from "@mui/material";
+import { Box, Typography, Slide } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 
 const InfoEvent = () => {
@@ -7,52 +7,56 @@ const InfoEvent = () => {
     threshold: 0.2,
   });
 
- 
-
   return (
     <Box
       ref={ref}
       sx={{
         width: "100%",
-        py: { xs: 6, md: 8 },
+        height: { xs: "50vh", md: "100vh" }, // 🔹 ocupa toda la altura visible
+        backgroundImage: "url('/images/nueva/fondo2.png')", // 🔹 fondo completo
+        backgroundSize: "cover", // 🔹 cubre el área completa sin deformarse
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         display: "flex",
-        alignItems: "flex-start", // 👈 el contenido empieza un poco más arriba
-        justifyContent: "center",
-        backgroundColor: "#ffffff",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center", // 🔹 centra vertical y horizontalmente
         textAlign: "center",
+        position: "relative",
+        overflow: "hidden",
       }}
     >
       <Slide in={inView} direction="up" timeout={800}>
         <Box
           sx={{
-            maxWidth: { xs: "300px", md: "360px" },
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            justifyContent: "center",
+            p: 2,
           }}
         >
-          {/* GIF más arriba y separado */}
+          {/* GIF */}
           <Box
             component="img"
             src="/images/fiesta.gif"
-            alt="Ceremonia"
+            alt="Fiesta"
             sx={{
-              width: 130,
-              height: 130,
-              mb: 3, // 👈 más separación con el texto
-              mt: -2, // 👈 lo sube un poquito
+              width: 120,
+              height: 120,
+              mb: 2,
             }}
           />
 
+          {/* Título */}
           <Typography
             variant="h4"
             sx={{
               fontFamily: "'Eyesome'",
-              fontSize: { xs: "2.2rem", md: "2.8rem" },
-              color: "#000000",
+              fontSize: { xs: "2.4rem", md: "3rem" },
+              color: "#000",
               fontWeight: 600,
-              lineHeight: 1.2,
-              mb: 2,
+              mb: 1,
             }}
           >
             Fiesta
@@ -61,13 +65,11 @@ const InfoEvent = () => {
           {/* Fecha */}
           <Typography
             sx={{
-              mb: 1.5,
               fontFamily: "'Quicksand', serif",
-              fontSize: { xs: "1rem", md: "1.2rem" },
-              color: "#000000",
+              fontSize: { xs: "1rem", md: "1.3rem" },
+              color: "#000",
               fontWeight: "bold",
-              lineHeight: 1.3,
-              whiteSpace: "nowrap",
+              mb: 1,
             }}
           >
             Sábado 08 de Noviembre
@@ -76,13 +78,11 @@ const InfoEvent = () => {
           {/* Hora */}
           <Typography
             sx={{
-              mb: 1.5,
               fontFamily: "'Quicksand', serif",
-              fontSize: { xs: "1rem", md: "1.2rem" },
-              color: "#000000",
+              fontSize: { xs: "1rem", md: "1.3rem" },
+              color: "#000",
               fontWeight: "bold",
-              lineHeight: 1.3,
-              whiteSpace: "nowrap",
+              mb: 1,
             }}
           >
             22:00 hs
@@ -91,18 +91,14 @@ const InfoEvent = () => {
           {/* Dirección */}
           <Typography
             sx={{
-              mb: 1.5,
               fontFamily: "'Quicksand', serif",
-              fontSize: { xs: "1rem", md: "1.2rem" },
-              color: "#000000",
+              fontSize: { xs: "1rem", md: "1.3rem" },
+              color: "#000",
               fontWeight: "bold",
-              lineHeight: 1.3,
             }}
           >
-            Salon Cultural
+            Salón Cultural
           </Typography>
-
-          
         </Box>
       </Slide>
     </Box>

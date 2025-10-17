@@ -7,7 +7,7 @@ const SuggestSong = () => {
     threshold: 0.2,
   });
 
-  const backgroundImage = "/images/modificaciones/sugerencia.png";
+  const backgroundImage = "/images/nueva/canciones.png";
 
   return (
     <Box
@@ -44,7 +44,7 @@ const SuggestSong = () => {
             boxShadow: "none",
             animation: "bounceBtn 2s infinite",
             transition: "all 0.3s ease",
-            mb: { xs: 8, md: 2 }, // 👈 ajusta visualmente aún más hacia arriba
+            mb: { xs: 4, md: 2 }, // 👈 ajusta visualmente aún más hacia arriba
             "@keyframes bounceBtn": {
               "0%, 20%, 50%, 80%, 100%": {
                 transform: "translateY(0)",

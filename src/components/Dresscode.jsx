@@ -8,32 +8,21 @@ const Dresscode = () => {
   });
 
   return (
-    <Box
-      ref={ref}
-      sx={{
-        width: "100%",
-        minHeight: "40vh",
-        backgroundColor: "#ffffff",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        py: 6,
-      }}
-    >
-      <Fade in={inView} timeout={1000}>
-        <Box
-          component="img"
-          src="/images/modificaciones/dresscode.png"
-          alt="Frase del evento"
-          sx={{
-            width: { xs: "85%", md: "50%" },
-            maxWidth: "700px",
-            height: "auto",
-            objectFit: "contain",
-          }}
-        />
-      </Fade>
-    </Box>
+    <Fade in={inView} timeout={1000}>
+      <Box
+        ref={ref}
+        sx={{
+          width: "100%",
+          height: "auto",
+          minHeight: "40vh", // 👈 da altura mínima razonable
+          backgroundImage: "url('/images/nueva/dress.png')",
+          backgroundSize: "cover", // 👈 muestra toda la imagen sin recortar
+          backgroundPosition: "center top", // 👈 centrada arriba
+          backgroundRepeat: "no-repeat",
+          display: "block",
+        }}
+      />
+    </Fade>
   );
 };
 

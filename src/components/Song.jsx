@@ -23,7 +23,7 @@ const Song = () => {
     }
   };
 
-  const backgroundImage = "/images/modificaciones/cancion.png"; 
+  const backgroundImage = "/images/new/play.png"; 
 
   return (
     <Box

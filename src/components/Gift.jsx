@@ -1,12 +1,5 @@
 import { useState } from "react";
-import {
-  Box,
-  Typography,
-  Fade,
-  Button,
-  Modal,
-  Paper,
-} from "@mui/material";
+import { Box, Typography, Fade, Button, Modal, Paper } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 
 const Gift = () => {
@@ -16,7 +9,6 @@ const Gift = () => {
   });
 
   const [open, setOpen] = useState(false);
-
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
@@ -27,13 +19,19 @@ const Gift = () => {
         ref={ref}
         sx={{
           width: "100%",
-          minHeight: "50vh",
-          backgroundColor: "#ffffff",
+          minHeight: { xs: "50vh", md: "80vh" }, // 👈 mucho más bajo, se adapta bien a mobile
+          backgroundImage: "url('/images/nueva/fondo.png')",
+          backgroundSize: "cover", // cubre toda el área
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
+          px: 2,
+          position: "relative",
+          overflow: "hidden",
         }}
       >
         <Fade in={inView} timeout={1000}>
@@ -43,7 +41,8 @@ const Gift = () => {
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              gap: 3, // espaciado uniforme entre elementos
+              gap: 3,
+              zIndex: 2,
             }}
           >
             {/* Ícono Regalo */}
@@ -52,8 +51,8 @@ const Gift = () => {
               src="/images/confirm2.gif"
               alt="Regalo"
               sx={{
-                width: 130,
-                height: 130,
+                width: 110,
+                height: 110,
               }}
             />
 
@@ -62,10 +61,10 @@ const Gift = () => {
               variant="h6"
               sx={{
                 fontFamily: "'Quicksand'",
-                fontSize: { xs: "1.1rem", md: "1.6rem" },
+                fontSize: { xs: "1rem", md: "1.4rem" },
                 color: "#000000",
                 fontWeight: 500,
-                lineHeight: 1.6,
+                lineHeight: 1.5,
               }}
             >
               Tu presencia es el mejor regalo que puedo recibir.
@@ -154,7 +153,10 @@ const Gift = () => {
                 color: "#000000",
                 fontFamily: "'Quicksand', serif",
                 fontWeight: "bold",
-                "&:hover": { borderColor: "#333333", backgroundColor: "#f8f8f8" },
+                "&:hover": {
+                  borderColor: "#333333",
+                  backgroundColor: "#f8f8f8",
+                },
               }}
             >
               Cerrar

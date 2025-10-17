@@ -38,29 +38,39 @@ const Countdown = () => {
       ref={ref}
       id="info"
       sx={{
-        height: "85vh",
         width: "100%",
-        backgroundImage: "url('/images/modificaciones/historiablanco.webp')",
+        minHeight: { xs: "25vh", md: "35vh" },
+        backgroundImage: "url('/images/nueva/cuenta.png')", // 👈 imagen de fondo
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
+        position: "relative", // 👈 necesario para capa blanca
         display: "flex",
-        flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        position: "relative",
         overflow: "hidden",
       }}
     >
-      <Fade in={inView} timeout={1000}>
+      {/* 🔹 Capa blanca translúcida encima del fondo */}
+      <Box
+        sx={{
+          position: "absolute",
+          inset: 0,
+          background: "rgba(255,255,255,0.65)", // 👈 nivel de opacidad
+          zIndex: 1,
+        }}
+      />
+
+      {/* 🔹 Contenido del contador */}
+      <Fade in={inView} timeout={800}>
         <Grid
           container
-          spacing={4}
+          spacing={3}
           justifyContent="center"
           sx={{
-            transform: { xs: "translateY(180px)", md: "translateY(40px)" }, // 👈 baja solo el texto
-            transition: "transform 0.3s ease-in-out",
+            position: "relative",
+            zIndex: 2, // 👈 asegura que el texto esté por encima de la capa blanca
           }}
         >
           {unidades.map(([unit, value]) => (
@@ -68,11 +78,10 @@ const Countdown = () => {
               <Box textAlign="center">
                 <Typography
                   sx={{
-                    fontSize: { xs: "2.4rem", md: "4rem" },
+                    fontSize: { xs: "2.4rem", md: "3.5rem" },
                     fontWeight: "bold",
                     color: "#000000",
                     fontFamily: "'Quicksand'",
-                    textShadow: "0 2px 6px rgba(0,0,0,0.5)",
                   }}
                 >
                   {String(value).padStart(2, "0")}
@@ -80,11 +89,10 @@ const Countdown = () => {
                 <Typography
                   sx={{
                     textTransform: "capitalize",
-                    fontSize: { xs: "1rem", md: "1.3rem" },
+                    fontSize: { xs: "1rem", md: "1.2rem" },
                     fontFamily: "'Quicksand'",
-                    color: "#ffffff",
-                    fontWeight: "bold",
-                    textShadow: "0 2px 4px rgba(0,0,0,0.4)",
+                    color: "#000000",
+                    fontWeight: "500",
                   }}
                 >
                   {unit}

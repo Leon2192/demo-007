@@ -13,8 +13,8 @@ const Hero = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const desktopImage = "/images/modificaciones/historia.webp";
-  const mobileImage = "/images/modificaciones/historia.webp";
+  const desktopImage = "/images/nueva/portada.png";
+  const mobileImage = "/images/nueva/portada.png";
 
 
  

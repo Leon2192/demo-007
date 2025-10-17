@@ -8,32 +8,35 @@ const Frase = () => {
   });
 
   return (
-    <Box
-      ref={ref}
-      sx={{
-        width: "100%",
-        minHeight: "40vh",
-        backgroundColor: "#ffffff",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        py: 6,
-      }}
-    >
-      <Fade in={inView} timeout={1000}>
+    <Fade in={inView} timeout={1000}>
+      <Box
+        ref={ref}
+        sx={{
+          width: "100%",
+          height: "auto",
+          position: "relative",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          overflow: "hidden",
+        }}
+      >
+        {/* Fondo adaptable */}
         <Box
           component="img"
-          src="/images/frase.png"
+          src="/images/new/lavida.png"
           alt="Frase del evento"
           sx={{
-            width: { xs: "85%", md: "50%" },
-            maxWidth: "700px",
+            width: "100%",
             height: "auto",
-            objectFit: "contain",
+            maxHeight: "100vh", // 👈 nunca sobrepasa la altura visible
+            objectFit: "cover", // 👈 llena el ancho sin deformarse
+            objectPosition: "center",
+            display: "block",
           }}
         />
-      </Fade>
-    </Box>
+      </Box>
+    </Fade>
   );
 };
 
