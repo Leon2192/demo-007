@@ -19,17 +19,16 @@ const Gift = () => {
         ref={ref}
         sx={{
           width: "100%",
-          minHeight: { xs: "50vh", md: "80vh" }, // 👈 mucho más bajo, se adapta bien a mobile
+          minHeight: { xs: "50vh", md: "80vh" },
           backgroundImage: "url('/images/nueva/fondo.png')",
-          backgroundSize: "cover", // cubre toda el área
+          backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
+          justifyContent: "center", // 🔹 centra vertical y horizontalmente el bloque
           alignItems: "center",
           textAlign: "center",
-          px: 2,
+        
           position: "relative",
           overflow: "hidden",
         }}
@@ -37,10 +36,12 @@ const Gift = () => {
         <Fade in={inView} timeout={1000}>
           <Box
             sx={{
+              width: "100%",
               maxWidth: { xs: "90%", md: "700px" },
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
+              justifyContent: "center",
+              alignItems: "center", // 🔹 centra horizontalmente todo el contenido
               gap: 3,
               zIndex: 2,
             }}
@@ -56,7 +57,7 @@ const Gift = () => {
               }}
             />
 
-            {/* Texto principal */}
+            {/* Texto principal actualizado */}
             <Typography
               variant="h6"
               sx={{
@@ -67,10 +68,8 @@ const Gift = () => {
                 lineHeight: 1.5,
               }}
             >
-              Tu presencia es el mejor regalo que puedo recibir.
-              <br />
-              Pero si querés tener un gesto especial, te dejo los datos de mi
-              cuenta bancaria.
+              Tu presencia es el mejor regalo, pero si deseas regalar un detalle
+              o transferencia será bien recibido.
             </Typography>
 
             {/* Botón para abrir modal */}

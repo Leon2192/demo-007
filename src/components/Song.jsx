@@ -1,4 +1,4 @@
-import { Box, Typography, IconButton } from "@mui/material";
+import { Box, IconButton } from "@mui/material";
 import { useState, useRef } from "react";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import PauseIcon from "@mui/icons-material/Pause";
@@ -23,41 +23,27 @@ const Song = () => {
     }
   };
 
-  const backgroundImage = "/images/new/play.png"; 
+  const backgroundImage = "/images/new/play.png";
 
   return (
     <Box
       sx={{
-        height: { xs: "40vh", md: "50vh" }, // 🔹 Mucho más bajo que Hero
+        height: { xs: "25vh", md: "50vh" },
         width: "100%",
-       backgroundImage: `url(${backgroundImage})`,
-       backgroundSize: "cover",
-       backgroundPosition: "center",
-       backgroundRepeat: "no-repeat",
+        backgroundImage: `url(${backgroundImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
         display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
         justifyContent: "center",
+        alignItems: "center",
         textAlign: "center",
-        gap: 2,
-     
       }}
     >
-      <Typography
-        variant="h5"
-        sx={{
-          color: "#000",
-          fontWeight: 500,
-          fontFamily: "'Eyesome'",
-            fontSize: { xs: "2.2rem", md: "3.5rem" },
-        }}
-      >
-         Dale play a mi canción favorita
-      </Typography>
-
       <IconButton
         onClick={toggleAudio}
         sx={{
+          transform: "translateY(30px)", // 👈 baja un poco el botón para alinearlo con la imagen
           backgroundColor: "rgba(0,0,0,0.05)",
           color: "#000",
           width: 70,
@@ -67,6 +53,7 @@ const Song = () => {
           "&:hover": {
             backgroundColor: "rgba(0,0,0,0.1)",
           },
+          transition: "transform 0.3s ease",
         }}
       >
         {isPlaying ? (

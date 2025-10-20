@@ -13,8 +13,8 @@ const Hero = () => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
-  const desktopImage = "/images/nueva/portada.png";
-  const mobileImage = "/images/nueva/portada.png";
+  const desktopImage = "/images/nueva/portada1.png";
+  const mobileImage = "/images/nueva/portada1.png";
 
 
  
@@ -78,9 +78,7 @@ const Hero = () => {
           },
         }}
       >
-        <a href="#info" style={{ color: "#000000", textDecoration: "none" }}>
-          <KeyboardArrowDownIcon fontSize="inherit" />
-        </a>
+    
       </Box>
     </Box>
   );

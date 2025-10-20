@@ -40,37 +40,56 @@ const Countdown = () => {
       sx={{
         width: "100%",
         minHeight: { xs: "25vh", md: "35vh" },
-        backgroundImage: "url('/images/nueva/cuenta.png')", // 👈 imagen de fondo
+        backgroundImage: "url('/images/nueva/cuenta.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
-        position: "relative", // 👈 necesario para capa blanca
+        position: "relative",
         display: "flex",
+        flexDirection: "column", // 👈 para apilar el texto y el contador
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
         overflow: "hidden",
+        py: 4,
       }}
     >
-      {/* 🔹 Capa blanca translúcida encima del fondo */}
+      {/* 🔹 Capa blanca translúcida */}
       <Box
         sx={{
           position: "absolute",
           inset: 0,
-          background: "rgba(255,255,255,0.65)", // 👈 nivel de opacidad
+          background: "rgba(255,255,255,0.65)",
           zIndex: 1,
         }}
       />
 
-      {/* 🔹 Contenido del contador */}
+      {/* 🔹 Texto “Faltan…” */}
       <Fade in={inView} timeout={800}>
+        <Typography
+          sx={{
+            fontFamily: "'Quicksand'",
+            fontSize: { xs: "1.5rem", md: "2rem" },
+            fontWeight: 500,
+            color: "#000000",
+            mb: 2, // 🔹 separa del contador
+            position: "relative",
+            zIndex: 2,
+          }}
+        >
+          Faltan…
+        </Typography>
+      </Fade>
+
+      {/* 🔹 Contenido del contador */}
+      <Fade in={inView} timeout={1000}>
         <Grid
           container
           spacing={3}
           justifyContent="center"
           sx={{
             position: "relative",
-            zIndex: 2, // 👈 asegura que el texto esté por encima de la capa blanca
+            zIndex: 2,
           }}
         >
           {unidades.map(([unit, value]) => (
@@ -92,7 +111,7 @@ const Countdown = () => {
                     fontSize: { xs: "1rem", md: "1.2rem" },
                     fontFamily: "'Quicksand'",
                     color: "#000000",
-                    fontWeight: "500",
+                    fontWeight: 500,
                   }}
                 >
                   {unit}

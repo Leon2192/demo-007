@@ -13,6 +13,9 @@ import Qr from "./components/QR";
 import Frase from "./components/Frase";
 import Gallery from "./components/Gallery/GalleryPremium";
 import Song from "./components/Song";
+import Thanks from "./components/Thanks";
+import Frase2 from "./components/Frase2";
+import Fiesta from "./components/Fiesta";
 
 
 function Loader() {
@@ -65,14 +68,16 @@ function App() {
       <Hero />
       <Song/>
       <Frase/>
+      <Frase2/>
       <Countdown />
-      <InfoEvent />
+      <Fiesta/>
       <Dresscode/>
       <Confirm />
       <Gallery/>
       <Gift />
       <Qr />
       <SuggestSong/>
+      <Thanks/>
     </>
   );
 }
