@@ -15,7 +15,7 @@ const Dresscode = () => {
           width: "100%",
           height: "auto",
           minHeight: "40vh", // 👈 da altura mínima razonable
-          backgroundImage: "url('/images/nueva/dress.png')",
+          backgroundImage: "url('/images/ultimo/dresscode.png')",
           backgroundSize: "cover", // 👈 muestra toda la imagen sin recortar
           backgroundPosition: "center top", // 👈 centrada arriba
           backgroundRepeat: "no-repeat",

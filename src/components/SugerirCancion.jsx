@@ -1,4 +1,4 @@
-import { Box, Button, Fade } from "@mui/material";
+import { Box, Fade } from "@mui/material";
 import { useInView } from "react-intersection-observer";
 
 const SuggestSong = () => {
@@ -24,27 +24,29 @@ const SuggestSong = () => {
         alignItems: "center",
         justifyContent: "flex-end",
         textAlign: "center",
-        pb: { xs: 0.5, md: 2 }, // 👈 sube el botón (menos espacio inferior)
+        pb: { xs: 1.5, md: 3 }, // 🔹 sube un poco el botón en mobile
       }}
     >
       <Fade in={inView} timeout={1000}>
-        <Button
+        <Box
           component="a"
           href="https://docs.google.com/forms/d/e/1FAIpQLSfjVQuSy7GeaGmfaoHhPI2E-99-5ySP0Qdqi3497XcJvu1wkg/viewform?usp=header"
           target="_blank"
           rel="noopener noreferrer"
-          variant="contained"
           sx={{
-            borderRadius: 999,
-            px: 2,
-            py: 1,
-            backgroundColor: "#000000",
-            fontFamily: "'Prata'",
-            color: "#ffffff",
-            boxShadow: "none",
-            animation: "bounceBtn 2s infinite",
+            display: "inline-block",
+            px: 4,
+            py: 1.2,
+            borderRadius: "50px",
+            backgroundColor: "#000",
+            color: "#fff",
+            fontFamily: "'Quicksand', sans-serif",
+            fontWeight: "bold",
+            fontSize: "1rem",
+            textDecoration: "none",
             transition: "all 0.3s ease",
-            mb: { xs: 4, md: 2 }, // 👈 ajusta visualmente aún más hacia arriba
+            mb: { xs: 4, md: 2 },
+            animation: "bounceBtn 2s infinite",
             "@keyframes bounceBtn": {
               "0%, 20%, 50%, 80%, 100%": {
                 transform: "translateY(0)",
@@ -58,13 +60,13 @@ const SuggestSong = () => {
             },
             "&:hover": {
               backgroundColor: "#fff",
-              color: "#000000",
+              color: "#000",
               transform: "scale(1.05)",
             },
           }}
         >
           Sugerir canción
-        </Button>
+        </Box>
       </Fade>
     </Box>
   );
